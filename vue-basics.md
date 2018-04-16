@@ -50,3 +50,5 @@ computed: {
 This is a computed property. Computed properties are implemented as functions that return a value.  
 They are accessed just like you would access a normal data property. Computed properties are only reevaluated when the underlying data changes (`this.name` in this case).  
 Computed properties should be used instead of methods wherever possible.
+
+[https://vuejs.org/v2/guide/computed.html]()

@@ -23,7 +23,7 @@ methods: {
   }
 }
 ```
-https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+[https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats]()
 
 ## Async Update Queue
 Vue does some stuff with buffering changes. We can pass a callback function to be executed after the changes are written to the DOM like so:
@@ -34,4 +34,4 @@ this.$nextTick(function() {})
 We should avoid this wherever possible. But it might be necessary,
 particularly in the text editing component.
 
-https://vuejs.org/v2/guide/reactivity.html#Async-Update-Queue
+[https://vuejs.org/v2/guide/reactivity.html#Async-Update-Queue]()

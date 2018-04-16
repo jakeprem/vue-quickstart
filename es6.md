@@ -10,7 +10,7 @@ A collection of ES6 features that might be unusual if you've mostly worked with 
   * [Template Literals](#template-literals)
 
 ## Spread Operator
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax]()
 
 ## Object Shorthands
 ### Properties
@@ -59,13 +59,13 @@ obj.TheThing
 obj.AlsoTheThing
 obj.doTheThing()
 ```
-(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015)
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015]()
 
 ## let and const
 ### let
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let]()
 ### const
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const]()
 
 ## Arrow functions
 Similar to Python Lambdas and C# LINQ expressions.
@@ -96,7 +96,7 @@ let doTheThing = (firstname, lastname) => { fullname: firstname + lastname }
 
 Unlike other Javascript functions, arrow functions don't bind `this`. This is less relevant when dealing with functions on Vue objects, e.g. in the `methods` property since Vue binds this for us behind the scenes. If we end up using prototypes or other forms of `this` in our library code then it might be relevant.
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions]()
 
 ## Object Destructuring
 Pull properties out of objects.
@@ -116,7 +116,7 @@ const actions = {
 }
 ```
 This is probably the most complicated thing on this page. The way we use it in Vue is pretty straight forward though.
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment]()
 
 ## Export and Import
 Export makes code available to other files/modules  
@@ -167,8 +167,8 @@ x
 // 5
 ```
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export  
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export  ]()
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import]()
 
 ## Template Literals
 A way to do string interpolation.
@@ -189,4 +189,4 @@ var jsVersion = 'ES5'
 
 var greeting = 'Hello ' + firstName + '! Welcome to ' + jsVersion + '!'
 ```
-(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals]()

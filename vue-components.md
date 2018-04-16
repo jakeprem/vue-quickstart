@@ -10,5 +10,7 @@ Information specific to Vue components
 This is the same as the root level Vue data property, except that in a component, the data property *must* be a function that returns an object. Returning an object lets every instance of the component have it's own instance of the state. If you don't return an object then every instance will share the same state.
 
 ## Props
+[https://vuejs.org/v2/guide/components-props.html]()
 
 ## Slots
+[https://vuejs.org/v2/guide/components-slots.html]()
