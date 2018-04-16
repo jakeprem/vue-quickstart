@@ -4,6 +4,8 @@ A guide to give you a working mental model in areas of core importance to Vue.js
 ---
 
   * [Introduction](README.md)
+  * [Vue Basics](vue-basics.md)
+  * [Vuex](vuex.md)
   * [ES6 Syntax](es6.md)
   * [References](references.md)
 

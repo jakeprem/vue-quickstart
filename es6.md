@@ -1,6 +1,14 @@
 # ES6 Syntax
 A collection of ES6 features that might be unusual if you've mostly worked with older Javascript
 
+  * [Spread Operator](#spread-operator)
+  * [Object Shorthand](#object-shorthands)
+  * [let and const](#let-and-const)
+  * [Arrow functions](#arrow-functions)
+  * [Object Destructuring](#object-destructuring)
+  * [Export and Import](#export-and-import)
+  * [Template Literals](#template-literals)
+
 ## Spread Operator
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 
@@ -60,17 +68,106 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const
 
 ## Arrow functions
+Similar to Python Lambdas and C# LINQ expressions.
+
+A shorthand for declaring Javascript functions. 
+```javascript
+// One line arrow functions have an implicit return, i.e. the result of the expression will be returned
+let doTheThing = (firstname, lastname) => firstname + lastname
+
+doTheThing = () => 'Whatever'
+doTheThing = _ => 'Whatever'
+doTheThing = param1 => param1.name
+doTheThing = aParam => {
+  let bReturn = aParam * 2
+  return bReturn
+}
+// Usage on object methods is not recommended in normal Javascript but okay in Vue/Vuex
+// Related to potential confusion with binding 'this'
+const getters = {
+  fullname: state => state.firstname + state.lastname
+}
+```
+Be mindful of your `{}` and `()` if you're doing a one liner with implicit return.
+```javascript
+// The brackets here get interpreted as block brackets not object brackets
+let doTheThing = (firstname, lastname) => { fullname: firstname + lastname }
+```
+
+Unlike other Javascript functions, arrow functions don't bind `this`. This is less relevant when dealing with functions on Vue objects, e.g. in the `methods` property since Vue binds this for us behind the scenes. If we end up using prototypes or other forms of `this` in our library code then it might be relevant.
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
 ## Object Destructuring
+Pull properties out of objects.
+
+This is an example of what you might see in Vuex. When Vuex calls an action method, the first parameter is a context object (https://vuex.vuejs.org/en/actions.html).  
+The context object has all of the vuex modules properties and commit (`commit`, `state`, `getters`, and `actions`)
+```javascript
+const actions = {
+  doTheThing({ commit }) {
+    // The commit function will be available here but not the rest of context
+    commit('MY_MUTATION', payload)
+  },
+  // is equivalent to
+  doTheOtherThing(context) {
+    context.commit('MY_MUTATION', payload)
+  }
+}
+```
 This is probably the most complicated thing on this page. The way we use it in Vue is pretty straight forward though.
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 
 ## Export and Import
-### Export
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
+Export makes code available to other files/modules  
+Import brings in code from other files/modules
 
-### Import
+### export default
+```javascript
+// File: thing.js
+let thisIsAThing = param => param*2
+
+export default {
+  doTheThing() {
+    // Do something
+  },
+  name: 'The Thing',
+  thisIsAThing
+}
+```
+```javascript
+// File: client.js (or whatever)
+
+// Since we used export default, you can call it whatever you want,
+// in this case I've chosen TheThing
+import TheThing from 'thing.js'
+
+TheThing.name
+TheThing.doTheThing()
+TheThing.thisIsAThing(5)
+```
+
+### export
+```javascript
+// File: things.js
+export const NAME = 'The Thing'
+export function doTheThing() {
+  // Do something
+}
+export let x = 5
+```
+```javascript
+// File: client.js (or whatever)
+import { NAME, doTheThing, x } from 'things'
+NAME
+// 'The Thing'
+doTheThing()
+// Executes function
+x
+// 5
+```
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export  
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 
 ## Template Literals
